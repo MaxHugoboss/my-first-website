@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="dropdown">
+        <button class="dropbtn">Меню</button>
+        <div class="dropdown-content">
+            <a href="#" onclick="showAllCountriesAndUpdateTitle(this.textContent)">Все страны</a>
+            <a href="#" onclick="hideEuropeAndUpdateTitle(this.textContent)">Европа</a>
+            <a href="#" onclick="hideAsiaAndUpdateTitle(this.textContent)">Азия</a>
+            <a href="#" onclick="hideAfricaAndUpdateTitle(this.textContent)">Африка</a>
+            <a href="#" onclick="hideNorthAmericaAndUpdateTitle(this.textContent)">Северная Америка</a>
+            <a href="#" onclick="hideSouthAmericaAndUpdateTitle(this.textContent)">Южная Америка</a>
+            <a href="#" onclick="hideCentralAmericaAndUpdateTitle(this.textContent)">Центральная Америка</a>
+            <a href="#" onclick="hideOceaniaAndUpdateTitle(this.textContent)">Австралия и Океания</a>
+            <a href="#" onclick="hideOceaniaAndUpdateTitle(this.textContent)">Карибский бассейн</a>
+            <a href="#" onclick="hideOtherAndUpdateTitle(this.textContent)">Другое</a>
+        </div>
+      </div>
+      <div class="search-container">
+        <input type="text" id="country-search" placeholder="Поиск страны...">
+        <button onclick="searchCountry()">Поиск</button>
+      </div>
+      <h1 class="header-info">Все страны</h1>
+    </header>
+    <div class="all-list">
+      <div class="country-list">
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/australia/australia_640.png" alt="Country 1">
+          </div>
+          <div class="country-name">Австралия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/austria/austria_640.png" alt="Country 2">
+          </div>
+          <div class="country-name">Австрия</div>
+        </a>
+        <a href="#" class="country europe asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/azerbaijan/azerbaijan_640.png" alt="Country 3">
+          </div>
+          <div class="country-name">Азербайджан</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/aland_islands/aland_islands_640.png" alt="Country 4">
+          </div>
+          <div class="country-name">Аландские острова</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/albania/albania_640.png" alt="Country 4">
+          </div>
+          <div class="country-name">Албания</div>
+        </a>
+        <!-- Второй ряд -->
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/algeria/algeria_640.png" alt="Country 5">
+          </div>
+          <div class="country-name">Алжир</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/virgin_islands_us/virgin_islands_us_640.png" alt="Country 6">
+          </div>
+          <div class="country-name">Американские Виргинские острова</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/american_samoa/american_samoa_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Американское Самоа</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/anguilla/anguilla_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ангилья</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/england/england_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Англия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/angola/angola_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ангола</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/andorra/andorra_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Андорра</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/antarctica/antarctica_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Антарктида</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/antigua_and_barbuda/antigua_and_barbuda_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Антигуа и Барбуда</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/argentina/argentina_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Аргентина</div>
+        </a>
+        <a href="#" class="country europe asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/armenia/armenia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Армения</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/aruba/aruba_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Аруба</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/afghanistan/afghanistan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Афганистан</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bahamas/bahamas_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Багамские Острова</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bangladesh/bangladesh_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бангладеш</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/barbados/barbados_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Барбадос</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bahrain/bahrain_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бахрейн</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/belize/belize_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Белиз</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/belarus/belarus_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Белоруссия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/belgium/belgium_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бельгия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/benin/benin_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бенин</div>
+        </a>
+        <a href="#" class="country north-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bermuda/bermuda_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бермуды</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bulgaria/bulgaria_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Болгария</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bolivia/bolivia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Боливия</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bonaire/bonaire_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бонайре</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bosnia_and_herzegovina/bosnia_and_herzegovina_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Босния и Герцеговина</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/botswana/botswana_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ботсвана</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/brazil/brazil_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бразилия</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/british_indian_ocean_territory/british_indian_ocean_territory_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Британская территория в Индийском океане</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/virgin_islands_british/virgin_islands_british_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Британские Виргинские острова</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/brunei/brunei_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бруней</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bouvet_island/bouvet_island_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Буве</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/burkina_faso/burkina_faso_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Буркина-Фасо</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/burundi/burundi_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бурунди</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/bhutan/bhutan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Бутан</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/vanuatu/vanuatu_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Вануату</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/vatican_city/vatican_city_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ватикан</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/united_kingdom/united_kingdom_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Великобритания</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/hungary/hungary_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Венгрия</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/venezuela/venezuela_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Венесуэла</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/east_timor/east_timor_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Восточный Тимор</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/vietnam/vietnam_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Вьетнам</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/gabon/gabon_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Габон</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/haiti/haiti_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гаити</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guyana/guyana_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гайана</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/gambia/gambia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гамбия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/ghana/ghana_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гана</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guadeloupe/guadeloupe_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гваделупа</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guatemala/guatemala_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гватемала</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/french_guiana/french_guiana_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гвиана</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guinea/guinea_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гвинея</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guinea_bissau/guinea_bissau_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гвинея-Бисау</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/germany/germany_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Германия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guernsey/guernsey_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гернси</div>
+        </a>
+        <a href="#" class="country europe ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/gibraltar/gibraltar_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гибралтар</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/honduras/honduras_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гондурас</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/hong_kong/hong_kong_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гонконг</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/grenada/grenada_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гренада</div>
+        </a>
+        <a href="#" class="country north-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/greenland/greenland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гренландия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/greece/greece_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Греция</div>
+        </a>
+        <a href="#" class="country europe asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/georgia/georgia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Грузия</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/guam/guam_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Гуам</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/denmark/denmark_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Дания</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/democratic_republic_of_the_congo/democratic_republic_of_the_congo_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">ДР Конго</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/jersey/jersey_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Джерси</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/djibouti/djibouti_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Джибути</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/dominica/dominica_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Доминика</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/dominican_republic/dominican_republic_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Доминиканская Республика</div>
+        </a>
+        <a href="#" class="country europe other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/european_union/european_union_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Европейский союз</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/egypt/egypt_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Египет</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/zambia/zambia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Замбия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/western_sahara/western_sahara_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Западная Сахара</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/zimbabwe/zimbabwe_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Зимбабве</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/israel/israel_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Израиль</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/india/india_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Индия</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/indonesia/indonesia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Индонезия</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/jordan/jordan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Иордания</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/iran/iran_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Иран</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/ireland/ireland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ирландия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/iceland/iceland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Исландия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/spain/spain_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Испания</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/italy/italy_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Италия</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/yemen/yemen_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Йемен</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cape_verde/cape_verde_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кабо-Верде</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kazakhstan/kazakhstan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Казахстан</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cayman_islands/cayman_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Каймановы острова</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cambodia/cambodia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Камбоджа</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cameroon/cameroon_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Камерун</div>
+        </a>
+        <a href="#" class="country north-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/canada/canada_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Канада</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/qatar/qatar_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Катар</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kenya/kenya_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кения</div>
+        </a>
+        <a href="#" class="country europe asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cyprus/cyprus_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кипр</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kyrgyzstan/kyrgyzstan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Киргизия</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kiribati/kiribati_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кирибати</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/china/china_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Китай</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cocos_islands/cocos_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кокосовые острова</div>
+        </a>
+
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/colombia/colombia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Колумбия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/comoros/comoros_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Коморы</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kosovo/kosovo_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Косово</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/costa_rica/costa_rica_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Коста-Рика</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cote_d_Ivoire/cote_d_Ivoire_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кот-д'Ивуар</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cuba/cuba_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Куба</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/kuwait/kuwait_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кувейт</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/curacao/curacao_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Кюрасао</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/laos/laos_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Лаос</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/latvia/latvia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Латвия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/lesotho/lesotho_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Лесото</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/liberia/liberia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Либерия</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/lebanon/lebanon_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ливан</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/libya/libya_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ливия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/lithuania/lithuania_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Литва</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/liechtenstein/liechtenstein_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Лихтенштейн</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/luxembourg/luxembourg_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Люксембург</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mauritius/mauritius_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Маврикий</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mauritania/mauritania_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мавритания</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/madagascar/madagascar_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мадагаскар</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mayotte/mayotte_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Майотта</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/macao/macao_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Макао</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/macedonia/macedonia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Македония</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/malawi/malawi_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Малави</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/malaysia/malaysia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Малайзия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mali/mali_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мали</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/maldives/maldives_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мальдивы</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/malta/malta_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мальта</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/morocco/morocco_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Марокко</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/martinique/martinique_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мартиника</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/marshall_islands/marshall_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Маршалловы Острова</div>
+        </a>
+        <a href="#" class="country north-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mexico/mexico_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мексика</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/micronesia/micronesia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Микронезия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mozambique/mozambique_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мозамбик</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/moldova/moldova_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Молдавия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/monaco/monaco_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Монако</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/mongolia/mongolia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Монголия</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/montserrat/montserrat_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Монтсеррат</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/myanmar/myanmar_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Мьянма</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/namibia/namibia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Намибия</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/nauru/nauru_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Науру</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/nepal/nepal_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Непал</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/niger/niger_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Нигер</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/nigeria/nigeria_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Нигерия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/netherlands/netherlands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Нидерланды</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/nicaragua/nicaragua_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Никарагуа</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/niue/niue_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ниуэ</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/new_zealand/new_zealand_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Новая Зеландия</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/new_caledonia/new_caledonia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Новая Каледония</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/norway/norway_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Норвегия</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/norfolk_island/norfolk_island_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Норфолк</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/united_arab_emirates/united_arab_emirates_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Объединённые Арабские Эмираты</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/oman/oman_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Оман</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/isle_of_man/isle_of_man_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Остров Мэн</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/christmas_island/christmas_island_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Остров Рождества</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/heard_island_and_mcdonald_islands/heard_island_and_mcdonald_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Остров Херд и Острова Макдоналд</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/cook_islands/cook_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Острова Кука</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/pitcairn_islands/pitcairn_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Острова Питкэрн</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_helena/saint_helena_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Острова Святой Елены</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/pakistan/pakistan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Пакистан</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/palau/palau_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Палау</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/palestinian_territory/palestinian_territory_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Палестина</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/panama/panama_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Панама</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/papua_new_guinea/papua_new_guinea_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Папуа — Новая Гвинея</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/paraguay/paraguay_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Парагвай</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/peru/peru_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Перу</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/poland/poland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Польша</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/portugal/portugal_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Португалия</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/puerto_rico/puerto_rico_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Пуэрто-Рико</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/iraq/iraq_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Республика Ирак</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/republic_of_the_congo/republic_of_the_congo_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Республика Конго</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/reunion/reunion_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Реюньон</div>
+        </a>
+        <a href="#" class="country europe asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/russia/russia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Россия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/rwanda/rwanda_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Руанда</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/romania/romania_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Румыния</div>
+        </a>
+        <a href="#" class="country central-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/el_salvador/el_salvador_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сальвадор</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/samoa/samoa_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Самоа</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/san_marino/san_marino_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сан-Марино</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sao_tome_and_principe/sao_tome_and_principe_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сан-Томе и Принсипи</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saudi_arabia/saudi_arabia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Саудовская Аравия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/swaziland/swaziland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Свазиленд</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/korea_north/korea_north_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Северная Корея</div>
+        </a>
+        <a href="#" class="country oceania ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/northern_mariana_islands/northern_mariana_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Северные Марианские острова</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/seychelles/seychelles_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сейшельские Острова</div>
+        </a>
+        <a href="#" class="country oceania ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_barthelemy/saint_barthelemy_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сен-Бартелеми</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_martin/saint_martin_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сен-Мартен</div>
+        </a>
+        <a href="#" class="country oceania ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_pierre_and_miquelon/saint_pierre_and_miquelon_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сен-Пьер и Микелон</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/senegal/senegal_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сенегал</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_vincent_and_the_grenadines/saint_vincent_and_the_grenadines_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сент-Винсент и Гренадины</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_kitts_and_nevis/saint_kitts_and_nevis_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сент-Китс и Невис</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/saint_lucia/saint_lucia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сент-Люсия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/serbia/serbia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сербия</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/singapore/singapore_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сингапур</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sint_maarten/sint_maarten_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Синт-Мартен</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/syria/syria_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сирия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/slovakia/slovakia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Словакия</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/slovenia/slovenia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Словения</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/solomon_islands/solomon_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Соломоновы Острова</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/somalia/somalia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сомали</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/ussr/ussr_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">СССР</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sudan/sudan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Судан</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/suriname/suriname_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Суринам</div>
+        </a>
+        <a href="#" class="country north-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/united_states_of_america/united_states_of_america_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">США</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sierra_leone/sierra_leone_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Сьерра-Леоне</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tajikistan/tajikistan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Таджикистан</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/thailand/thailand_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Таиланд</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/republic_of_china/republic_of_china_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тайвань</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tanzania/tanzania_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Танзания</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/turks_and_caicos_islands/turks_and_caicos_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тёркс и Кайкос</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/togo/togo_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Того</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tokelau/tokelau_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Токелау</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tonga/tonga_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тонга</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/trinidad_and_tobago/trinidad_and_tobago_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тринидад и Тобаго</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tuvalu/tuvalu_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тувалу</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/tunisia/tunisia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Тунис</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/turkmenistan/turkmenistan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Туркмения</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/turkey/turkey_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Турция</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/uganda/uganda_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Уганда</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/uzbekistan/uzbekistan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Узбекистан</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/wallis_and_futuna/wallis_and_futuna_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Уоллис и Футуна</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/uruguay/uruguay_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Уругвай</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/wales/wales_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Уэльс</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/faroe_islands/faroe_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Фарерские острова</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/fiji/fiji_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Фиджи</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/philippines/philippines_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Филиппины</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/finland/finland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Финляндия</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/falkland_islands/falkland_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Фолклендские острова</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/france/france_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Франция</div>
+        </a>
+        <a href="#" class="country oceania">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/french_polynesia/french_polynesia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Французская Полинезия</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/french_southern_territories/french_southern_territories_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Французские Южные и Антарктические территории</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/croatia/croatia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Хорватия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/central_african_republic/central_african_republic_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">ЦАР</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/chad/chad_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Чад</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/montenegro/montenegro_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Черногория</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/czech_republic/czech_republic_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Чехия</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/chile/chile_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Чили</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/switzerland/switzerland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Швейцария</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sweden/sweden_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Швеция</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/scotland/scotland_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Шотландия</div>
+        </a>
+        <a href="#" class="country other">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/svalbard_and_jan_mayen/svalbard_and_jan_mayen_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Шпицберген и Ян-Майен</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/sri_lanka/sri_lanka_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Шри-Ланка</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/ecuador/ecuador_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Эквадор</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/equatorial_guinea/equatorial_guinea_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Экваториальная Гвинея</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/eritrea/eritrea_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Эритрея</div>
+        </a>
+        <a href="#" class="country europe">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/estonia/estonia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Эстония</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/ethiopia/ethiopia_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Эфиопия</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/south_africa/south_africa_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">ЮАР</div>
+        </a>
+        <a href="#" class="country south-america">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/south_georgia_and_the_south_sandwich_islands/south_georgia_and_the_south_sandwich_islands_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Южная Георгия и Южные Сандвичевы острова</div>
+        </a>
+        <a href="#" class="country asia">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/korea_south/korea_south_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Южная Корея</div>
+        </a>
+        <a href="#" class="country africa">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/south_sudan/south_sudan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Южный Судан</div>
+        </a>
+        <a href="#" class="country caribbean-basin">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/jamaica/jamaica_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Ямайка</div>
+        </a>
+        <a href="#" class="country asia ">
+          <div class="country-icon">
+            <img class="img-icon" src="https://img.freeflagicons.com/thumb/glossy_square_icon/japan/japan_640.png" alt="Country 7">
+          </div>
+          <div class="country-name">Япония</div>
+        </a>
+      </div>
+      
+      <!-- Флаг страны с блоками -->
+      
+      <button onclick="scrollToTop()" class="scroll-top-btn">&#8679;</button>
+      <div id="no-results-message" style="display: none;">По Вашему запросу ничего не найдено.</div>
+    </div>
+  </body>
+</html>
