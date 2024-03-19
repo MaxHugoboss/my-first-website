@@ -85,7 +85,7 @@ window.addEventListener('scroll', function() {
 
 function goToHome() {
   // Замените "URL_другого_сайта" на адрес вашего другого локального сайта
-  window.location.href = "file:///C:/Users/ADMIN/YandexDisk/Мой%20сайт/мой%20первый%20сайт/index.html";
+  window.location.href = "https://maxhugoboss.github.io/my-first-website/index";
 }
 
 function toggleSections(event) {
