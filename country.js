@@ -85,7 +85,7 @@ window.addEventListener('scroll', function() {
 
 function goToHome() {
   // Замените "URL_другого_сайта" на адрес вашего другого локального сайта
-  window.location.href = "https://maxhugoboss.github.io/my-first-website/index";
+  window.location.href = "https://maxhugoboss.github.io/my-first-website/index.html";
 }
 
 function toggleSections(event) {
