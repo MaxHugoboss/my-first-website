@@ -103,3 +103,19 @@ document.addEventListener("click", function(event) {
     toc.classList.remove("show-sections");
   }
 });
+
+const backgrounds = [
+  "Фотки/Разное/222.jpg",
+  "Фотки/Разное/2024-03-20_22-15-24.jpg",
+];
+
+function changeHeaderBackground() {
+  const randomIndex = Math.floor(Math.random() * backgrounds.length);
+  const randomBackground = backgrounds[randomIndex];
+  const header = document.querySelector(".header");
+  header.style.backgroundImage = `url("${randomBackground}")`;
+}
+
+window.onload = changeHeaderBackground;
+
+
