@@ -157,6 +157,7 @@ h1 {
 
 table {
   width: 100%;
+  font-size: 12px;
   border-collapse: collapse;
   border: 2px solid #dddddd;
 }
@@ -164,10 +165,6 @@ td {
   border: 1px solid #dddddd;
   padding: 8px;
   text-align: left;
-}
-
-td:first-child {
-  width: 200px;
 }
 
 tr:nth-child(even) {
