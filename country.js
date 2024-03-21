@@ -43,6 +43,36 @@ document.addEventListener("DOMContentLoaded", function() {
   // Назначаем обработчики событий для кнопок переключения слайдов
   prevButton.addEventListener('click', prevSlide);
   nextButton.addEventListener('click', nextSlide);
+
+  const countryName = document.querySelector('h1').textContent;
+  // Получаем элемент с id="relationships"
+  const generalInfoBlock = document.getElementById("general-info");
+  const capitalBlock = document.getElementById("capital");
+  const geographyBlock = document.getElementById("geography");
+  const populationBlock = document.getElementById("population");
+  const historyBlock = document.getElementById("history");
+  const scienceBlock = document.getElementById("science");
+  const tourismBlock = document.getElementById("tourism");
+  const economyBlock = document.getElementById("economy");
+  const ecologyBlock = document.getElementById("ecology");
+  const kitchenBlock = document.getElementById("kitchen");
+  const relationshipsBlock = document.getElementById("relationships");
+  const organizationBlock = document.getElementById("organization");
+  const mapBlock = document.getElementById("map");
+  // Изменяем текст внутри элемента с id="relationships"
+  generalInfoBlock.querySelector('h2').textContent = `${countryName}. Общие сведения`;
+  capitalBlock.querySelector('h2').textContent = `${countryName}. Столица`;
+  geographyBlock.querySelector('h2').textContent = `${countryName}. География`;
+  populationBlock.querySelector('h2').textContent = `${countryName}. Население`;
+  historyBlock.querySelector('h2').textContent = `${countryName}. История`;
+  scienceBlock.querySelector('h2').textContent = `${countryName}. Наука и культура`;
+  tourismBlock.querySelector('h2').textContent = `${countryName}. Туризм`;
+  economyBlock.querySelector('h2').textContent = `${countryName}. Экономика`;
+  ecologyBlock.querySelector('h2').textContent = `${countryName}. Экология`;
+  kitchenBlock.querySelector('h2').textContent = `${countryName}. Кухня`;
+  relationshipsBlock.querySelector('h2').textContent = `${countryName}. Отношения с Россией`;
+  organizationBlock.querySelector('h2').textContent = `${countryName}. Международные организации`;
+  mapBlock.querySelector('h2').textContent = `${countryName}. Расположение`;
 });
 
 // Функция для изменения размера изображения (развертывание/свертывание)
