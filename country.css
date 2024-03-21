@@ -457,4 +457,8 @@ a:hover {
   .home-button {
     font-size: 10px;
   }
+
+  .name-capital {
+    font-size: 32px;
+  }
 }
