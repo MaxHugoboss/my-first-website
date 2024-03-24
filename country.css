@@ -385,6 +385,23 @@ a:hover {
   max-width: 100%;
 }
 
+caption {
+  margin: 20px auto;
+  width: fit-content;
+  font-size: 21px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #b1b1b1, #8d8d8d);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.table-economy th:nth-child(1) {
+  max-width: 300px;
+}
+
 /* Show the button when user scrolls down 20px from the top of the document 
 @media screen and (min-height: 400px) {
   .scroll-top-btn.show {
